@@ -1,14 +1,20 @@
-*,
-*::before,
-*::after {
-	box-sizing: inherit;
+@use "../core/variables" as *;
+
+:root {
+	--back: #{$white};
+	--front: #{$black};
+
+	/* @media (prefers-color-scheme: dark) {
+		--back: #{$black};
+		--front: #{$white};
+	} */
 }
 
 img {
 	max-width: 100%;
+	object-fit: contain;
 }
 
-// * Put footer at bottom
 
 body {
 	min-height: 100vh;
@@ -16,8 +22,9 @@ body {
 	flex-direction: column;
 	background-color: var(--back);
 	color: var(--front);
-}
+	font-family: "Lato", sans-serif;
+	font-family: "Poppins", sans-serif;
 
-footer {
-	margin-top: auto;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
 }

@@ -1,0 +1,19 @@
+.burger[aria-expanded="true"] rect {
+	transition: all 0.3s;
+
+	rx: 2;
+	ry: 2;
+
+	&:first-child {
+		transform: translateX(8%) rotate(45deg);
+		transform-origin: left top;
+	}
+	&:nth-child(2) {
+		transform: translateX(100%);
+	}
+
+	&:last-child {
+		transform: translateX(8%) rotate(-45deg) ;
+		transform-origin: left bottom;
+	}
+}

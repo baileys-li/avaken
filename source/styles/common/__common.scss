@@ -1,5 +1,4 @@
 @use "./_global";
-
-@use "./page";
-
 @use "./container";
+@use "./scroll-lock";
+@use "./visually-hidden";
