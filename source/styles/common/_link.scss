@@ -1,0 +1,29 @@
+@use "../core/mixins" as *;
+@use "../core/variables" as *;
+
+.link {
+	display: inline-flex;
+	align-items: center;
+
+
+	font-weight: 600;
+	font-size: 0.75rem;
+	line-height: 120%;
+	color: var(--front);
+	text-transform: uppercase;
+	font-family: "Poppins", sans-serif;
+	text-decoration: none;
+	letter-spacing: 1px;
+
+	@include focus-hover {
+		color: $accent;
+	}
+
+	&__append {
+		margin-left: 10px;
+	}
+
+	@media (width > 500px) {
+		font-size: 14px;
+	}
+}

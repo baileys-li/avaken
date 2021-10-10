@@ -1,4 +1,6 @@
 @use "../core/variables" as *;
+@use "../core/mixins" as *;
+@use "sass:math";
 
 .carousel {
 	overflow: hidden;
@@ -20,7 +22,6 @@
 		img {
 			object-fit: cover;
 			width: 100%;
-
 		}
 
 		&--current {
@@ -45,7 +46,6 @@
 		font-size: 30px;
 		line-height: 120%;
 		display: block;
-		font-family: Poppins, sans-serif;
 
 		transform: translateY(-25%);
 	}
@@ -87,11 +87,8 @@
 		cursor: pointer;
 		display: grid;
 		place-items: center;
-		&:focus {
-			outline: none;
-		}
-		&:hover,
-		&:focus-visible {
+
+		@include focus-hover {
 			background-color: $accent;
 			color: $white;
 		}
@@ -113,7 +110,7 @@
 			position: absolute;
 			margin: 0;
 			bottom: 0;
-			right: calc(50% + #{$mobile-offset / 2});
+			right: calc(50% + math.div($mobile-offset, 2));
 		}
 
 		&__text {

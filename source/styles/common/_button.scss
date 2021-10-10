@@ -1,13 +1,13 @@
 @use "../core/variables" as *;
+@use "../core/mixins" as *;
 .button {
 	display: inline-flex;
 	align-items: center;
 	padding: 10px 16px;
 
 	font-weight: 600;
-	font-size: 12px;
+	font-size: 0.75rem;
 	line-height: 1.2;
-	font-family: Poppins, sans-serif;
 	text-align: center;
 	color: #ffffff;
 	text-transform: uppercase;
@@ -21,12 +21,7 @@
 		margin-left: 6px;
 	}
 
-	&:focus {
-		outline: none;
-	}
-
-	&:hover,
-	&:focus-visible {
+	@include focus-hover {
 		background-color: darken($accent, 15%);
 	}
 

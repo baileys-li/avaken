@@ -1,4 +1,5 @@
 @use "../core/variables" as *;
+@use "../core/mixins" as *;
 $mobile-height: 60px;
 
 .header {
@@ -60,12 +61,7 @@ $mobile-height: 60px;
 			border: none;
 			cursor: pointer;
 
-			&:focus {
-				outline: none;
-			}
-
-			&:hover,
-			&:focus-visible {
+			@include focus-hover {
 				color: $accent;
 			}
 		}

@@ -1,0 +1,26 @@
+-
+	const services = [
+			{tag: 'Experiences', title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Varius.', text: 'Molestie facilisis sit nisl imperdiet nunc, enim sed a. Mi ac ut arcu sollicitudin pellentesque.'},
+			{tag: 'Campaigns', title: 'Cras sit cras eget interdum. Suspendisse nibh mattis non fames sit.', text: 'Erat in ut nunc, morbi dictumst et lectus ligula enim. Porta porta nibh purus ac sit morbi et.'},
+			{tag: 'Studio', title: 'Mattis amet tincidunt sem morbi lacus blandit donec arcu dolor.', text: 'Bibendum molestie tellus maecenas eget. Risus aenean vestibulum id porttitor mattis.'}
+	]
+
+section.services#services
+	header.section-header
+		h2._subtitle Services
+		p._title
+			strong Full-service digital capabilities from end to end.
+		p._text
+			a(href="#").link See all services
+				+pasteSVGicon({icon: 'arrow-right', height: 11, width: 11, fill: "currentColor", className: "link__append"})
+
+	ul._list
+		each item in services
+			li.card
+				p._tag=item.tag
+				h3._title=item.title
+				p._text=item.text
+				a(href="#", title="More", aria-label="More")._link
+					+pasteSVGicon({icon: 'plus', height: 25, width: 25, fill: 'currentColor' })
+
+

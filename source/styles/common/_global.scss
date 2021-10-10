@@ -15,14 +15,15 @@ img {
 	object-fit: contain;
 }
 
-
 body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
 	background-color: var(--back);
 	color: var(--front);
-	font-family: Lato, sans-serif;
+	font-family: "Poppins", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
 
 	min-height: 100vh;
 	min-height: -webkit-fill-available;
