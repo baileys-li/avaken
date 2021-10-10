@@ -1,0 +1,10 @@
+@use "../core/variables" as *;
+.main {
+	padding-top: $mobile-offset;
+	padding-bottom: 24px;
+
+	@media (width > $smallToMediumBP) {
+		padding-top: 40px;
+		padding-bottom: 72px;
+	}
+}

@@ -1,0 +1,158 @@
+@use "../core/variables" as *;
+
+.carousel {
+	overflow: hidden;
+	position: relative;
+
+	&__slide {
+		margin: 0;
+		display: grid;
+		gap: $mobile-offset;
+
+		position: absolute;
+		top: 0;
+
+		picture {
+			display: flex;
+			transform: translateX(-100%);
+			transition: 0.6s transform ease-in-out;
+		}
+		img {
+			object-fit: cover;
+			width: 100%;
+
+		}
+
+		&--current {
+			position: static;
+
+			picture {
+				transform: translateX(0);
+				transition-delay: 0.1s;
+			}
+		}
+	}
+	&__headline,
+	.button {
+		transform: translateY(25%);
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.4s all ease-in-out;
+	}
+	&__headline {
+		margin: 0 0 32px;
+		font-weight: bold;
+		font-size: 30px;
+		line-height: 120%;
+		display: block;
+		font-family: Poppins, sans-serif;
+
+		transform: translateY(-25%);
+	}
+
+	&__slide--current &__headline,
+	&__slide--current .button {
+		transform: translateY(0);
+		visibility: visible;
+		opacity: 1;
+		transition-delay: 0.2s;
+	}
+
+	&__controls {
+		background-color: #f8f8f8;
+		display: grid;
+		grid-auto-flow: column;
+		width: 109px;
+		height: 50px;
+		position: relative;
+
+		gap: 1px;
+		border: 2px solid $black;
+
+		&::before {
+			position: absolute;
+			content: "";
+			width: 1px;
+			height: 64%;
+			top: 16%;
+			left: 50%;
+			background-color: transparentize($black, 0.8);
+		}
+	}
+
+	&__control {
+		border: 0;
+		background-color: transparent;
+		color: $black;
+		cursor: pointer;
+		display: grid;
+		place-items: center;
+		&:focus {
+			outline: none;
+		}
+		&:hover,
+		&:focus-visible {
+			background-color: $accent;
+			color: $white;
+		}
+	}
+
+	@media (width > 380px) {
+		&__slide {
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 320px;
+
+			img {
+				object-fit: cover;
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&__controls {
+			position: absolute;
+			margin: 0;
+			bottom: 0;
+			right: calc(50% + #{$mobile-offset / 2});
+		}
+
+		&__text {
+			padding: 65px 0 80px;
+		}
+	}
+
+	@media (width > 700px) {
+		&__headline {
+			font-size: 3rem;
+		}
+
+		&__slide {
+			grid-template-rows: auto;
+		}
+	}
+
+	@media (width > $container-width) {
+		&__slide {
+			grid-template-columns: 600px auto;
+			gap: 64px;
+		}
+
+		&__headline {
+			font-size: 90px;
+			line-height: 1.09;
+			margin-bottom: 45px;
+
+			letter-spacing: -0.015em;
+		}
+
+		&__controls {
+			width: 169px;
+			height: 70px;
+			right: auto;
+			left: 600px - 169px;
+		}
+		&__text {
+			padding: 158px 0;
+		}
+	}
+}

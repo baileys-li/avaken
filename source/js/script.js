@@ -1,4 +1,5 @@
 import changeExpanded from "./utils/changeExpanded.js";
+import initCarousel from "./utils/initCarousel.js";
 
 const navigationTrigger = document.querySelector(".header__button");
 
@@ -6,7 +7,6 @@ navigationTrigger.addEventListener("click", () => {
 	changeExpanded(navigationTrigger);
 	document.body.classList.toggle("scroll-lock");
 });
-
 
 // Header transformation
 const header = document.querySelector(".header");
@@ -23,3 +23,7 @@ window.addEventListener("scroll", () => {
 		prevScrollPostion > currentScrollPosition ? "0" : `-${height}px`;
 	prevScrollPostion = currentScrollPosition;
 });
+
+// Carousel
+const carousel = document.querySelector(".carousel");
+initCarousel(carousel);
