@@ -1,0 +1,29 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.input {
+	font-size: 14px;
+	line-height: 1.6;
+	display: grid;
+	gap: 2px;
+	width: 100%;
+
+	&__field {
+		background-color: #3d3d3d;
+		border: 0 solid $accent;
+		border-bottom-width: 2px;
+		height: 45px;
+		padding: 5px 10px;
+		color: $white;
+
+		@include focus-hover {
+			background-color: lighten(#3d3d3d, 10);
+			outline: 1px solid $accent;
+			border-bottom-color: transparent;
+		}
+	}
+
+	textarea {
+		height: 118px;
+	}
+}

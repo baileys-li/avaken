@@ -2,11 +2,13 @@ import changeExpanded from "./utils/changeExpanded.js";
 import initCarousel from "./utils/initCarousel.js";
 
 const navigationTrigger = document.querySelector(".header__button");
+const navigationLinks = document.querySelectorAll(".navigation__link");
 
-navigationTrigger.addEventListener("click", () => {
-	changeExpanded(navigationTrigger);
-	document.body.classList.toggle("scroll-lock");
-});
+navigationLinks.forEach((link) => [
+	link.addEventListener("click", changeNavigationStatus),
+]);
+
+navigationTrigger.addEventListener("click", changeNavigationStatus);
 
 // Header transformation
 const header = document.querySelector(".header");
@@ -27,3 +29,8 @@ window.addEventListener("scroll", () => {
 // Carousel
 const carousel = document.querySelector(".carousel");
 initCarousel(carousel);
+
+function changeNavigationStatus() {
+	changeExpanded(navigationTrigger);
+	document.body.classList.toggle("scroll-lock");
+}

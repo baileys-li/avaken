@@ -15,14 +15,15 @@
 	letter-spacing: 0.083em;
 
 	background-color: $accent;
+	border: none;
 	cursor: pointer;
-
-	&__append {
-		margin-left: 6px;
-	}
 
 	@include focus-hover {
 		background-color: darken($accent, 15%);
+	}
+
+	&__append {
+		margin-left: 6px;
 	}
 
 	&:active {
@@ -31,6 +32,7 @@
 
 	@media (width > 500px) {
 		padding: 15px 25px;
+
 		font-size: 14px;
 		&__append {
 			margin-left: 10px;
