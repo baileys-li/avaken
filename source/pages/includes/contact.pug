@@ -1,0 +1,21 @@
+footer.contact#contact
+	+pasteImage({src: "office.jpg", width: 390, height: 292, alt: "Working place", media: ["(min-width: 700px)"], sizes: ["office-big"], className: "contact__img"})
+
+	form._form
+		h2._title Write Me.
+		p._text Sit et vulputate posuere id diam ac eget lacinia enim. Id congue sapien libero sed. Aliquet amet eget placerat facilisis leo, sit consequat.
+
+		label.input Full Name
+			input(type="text" autocomplete="name" name="name")._field
+
+		label.input Phone
+			input(type="tel" autocomplete="tel" name="phone")._field
+
+		label.input Email Address
+			input(type="email" autocomplete="email" name='email')._field
+
+		label.input Message
+			textarea(name="comment")._field
+
+		button._submit.button Send Message
+			+pasteSVGicon({icon: 'arrow-right', height: 11, width: 11, fill: "currentColor", className: "button__append"})

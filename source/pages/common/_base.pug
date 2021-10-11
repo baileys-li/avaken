@@ -5,13 +5,17 @@
 block variables
 
 doctype html
-html(lang=lang).page
+html(lang=lang)
 	head
 		meta(charset="UTF-8")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
 		title=pageTitle
 		link(rel="stylesheet" href="css/style.css")
+		link(rel='preconnect' href='https://fonts.googleapis.com')
+		link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+		link(href='https://fonts.googleapis.com/css2?family=Lato&family=Poppins:wght@400;500;600;700&display=swap' rel='stylesheet')
+
 		//---- Favicons ----
 		link(rel="icon" href="/favicon.ico")
 		//- 32×32
@@ -26,4 +30,4 @@ html(lang=lang).page
 		block body
 
 		script(type="module" src="js/main.js")
-		script(type="module" src="js/main.legacy.js", defer, nomodule)
+		script(nomodule, src="js/main.legacy.js", defer)

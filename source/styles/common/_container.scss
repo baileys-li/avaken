@@ -1,14 +1,14 @@
-@use "../core/variables";
+@use "../core/variables" as *;
 
 .container {
 	width: 100%;
 	padding: {
-		left: variables.$mobile-offset;
-		right: variables.$mobile-offset;
+		left: $mobile-offset;
+		right: $mobile-offset;
 	}
 	margin: {
 		right: auto;
 		left: auto;
 	}
-	max-width: variables.$container-width;
+	max-width: $container-width + 2 * $mobile-offset;
 }

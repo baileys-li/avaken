@@ -1,0 +1,43 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+
+.navigation {
+	display: grid;
+	place-items: center;
+	&__list {
+		margin: auto;
+		list-style: none;
+		padding: 0;
+		display: grid;
+		width: 100%;
+		gap: 0 56px;
+	}
+
+	&__link {
+		color: inherit;
+		text-align: center;
+		display: block;
+		width: 100%;
+		text-decoration: none;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 83%;
+		padding: 36px 0;
+
+		@include focus-hover {
+			color: $accent;
+		}
+	}
+
+
+	@media screen and (width > $smallToMediumBP) {
+		&__list {
+			grid-auto-flow: column;
+		}
+		&__link {
+			font-size: 18px;
+			line-height: 1.11;
+			padding: 0;
+		}
+	}
+}

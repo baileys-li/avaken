@@ -1,4 +1,13 @@
 extends common/_base
 
+block variables
+	-pageTitle = "Avaken"
+
 block body
-	h1=pageTitle
+	include ./includes/header
+	main.main.container
+		h1.visually-hidden=pageTitle
+		include ./includes/intro
+		include ./includes/services
+		include ./includes/about-us
+		include ./includes/contact

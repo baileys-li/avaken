@@ -1,0 +1,6 @@
+@use "../core/variables" as *;
+.scroll-lock {
+	@media screen and (width <= $smallToMediumBP) {
+		overflow: hidden;
+	}
+}

@@ -1,0 +1,96 @@
+@use "../core/variables" as *;
+@use "../core/mixins" as *;
+$mobile-height: 60px;
+
+.header {
+	position: sticky;
+	top: 0;
+
+	width: 100%;
+	padding: 12px 0 13px;
+
+	--background: #{$black};
+
+	color: $white;
+
+	background-color: var(--background);
+
+	transition: top 0.2s ease-in;
+	z-index: 10;
+
+	&--light {
+		color: $black;
+
+		--background: #{$white};
+	}
+
+	&__wrapper {
+		position: relative;
+
+		display: flex;
+		justify-content: space-between;
+	}
+
+	@media screen and (width <= $smallToMediumBP) {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 4;
+
+			width: 100%;
+			height: 100%;
+
+			background-color: var(--background);
+		}
+		&__wrapper > * {
+			position: relative;
+			z-index: 5;
+		}
+
+		&__button {
+			display: flex;
+			align-items: center;
+			margin: 0;
+			padding: 0;
+
+			color: inherit;
+
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+
+			@include focus-hover {
+				color: $accent;
+			}
+		}
+
+		&__button[aria-expanded="false"] ~ &__nav {
+			transform: translateY(-200%);
+		}
+
+		&__nav {
+			position: fixed;
+			z-index: 2;
+
+			color: var(--front);
+
+			background-color: var(--back);
+
+			transition: transform 0.4s ease-in;
+
+			inset: $mobile-height - 1px 0 0;
+		}
+	}
+
+	@media screen and (width > $smallToMediumBP) {
+		padding: 34px 0;
+		&__wrapper {
+			align-items: center;
+		}
+		&__button {
+			display: none;
+		}
+	}
+}
