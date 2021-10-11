@@ -14,7 +14,8 @@ const Path = {
 		build: Base.BUILD,
 	},
 	SCRIPT: {
-		source: Base.SOURCE + "js/*.js",
+		source: Base.SOURCE + "js/script.js",
+		all: Base.SOURCE + "js/**/*.js",
 		build: Base.BUILD + "js/",
 	},
 	ICON: {

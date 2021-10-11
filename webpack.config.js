@@ -1,6 +1,5 @@
 import CircularDependencyPlugin from "circular-dependency-plugin";
-import DuplicatePackageCheckerPlugin from "duplicate-package-checker-webpack-plugin";
-import OptimizePlugin from "optimize-plugin";
+
 
 const webpackConfig = {
 	target: ["web", "es2017"],
@@ -13,8 +12,7 @@ const webpackConfig = {
 	},
 	plugins: [
 		new CircularDependencyPlugin(),
-		new DuplicatePackageCheckerPlugin(),
-		new OptimizePlugin(),
+
 	],
 };
 
